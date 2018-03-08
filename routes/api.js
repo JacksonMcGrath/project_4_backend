@@ -3,10 +3,20 @@
 const express = require('express');
 const router = express.Router();
 
+// --- Models
+const User = require('../models/Users');
+const Ingredient = require('../models/Ingredients');
+const Bar = require('../models/Bars')
+
 // --- Routes
-router.get('/yubar', (req , res) => {
-	res.send('the api is working')
-})
+User.methods(['get', 'put', 'post', 'delete']);
+User.register(router, '/users');
+
+Ingredient.methods(['get', 'put', 'post', 'delete']);
+Ingredient.register(router, '/ingredients');
+
+Bar.methods(['get', 'put', 'post', 'delete']);
+Bar.register(router, '/bars');
 
 // --- Return router
-module.exports = router;
+module.exports = router;  

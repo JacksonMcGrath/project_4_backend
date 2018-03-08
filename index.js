@@ -6,12 +6,12 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
 
 // --- MongoDB Database
-mongoose.connect('mongodb://localhost/yubar', {
+mongoose.connect('mongodb://localhost/afyabars', {
 	useMongoClient: true
 })
 
 mongoose.connection.once('open', () => {
-	console.log('connected to mongoDB');
+	console.log('--- connected to mongoDB');
 })
 
 // --- Middleware
